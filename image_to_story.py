@@ -25,8 +25,7 @@ def input_image_setup(uploaded_file):
         raise FileNotFoundError("No file uploaded")
 
 def generate_story(input,image):
-    # model=genai.GenerativeModel('gemini-pro-vision')
-    model=genai.GenerativeModel('gemini-1.5-pro-latest')
+    model=genai.GenerativeModel('gemini-2.5-flash')
     response=model.generate_content([input,image[0]])
     return response.text
 
